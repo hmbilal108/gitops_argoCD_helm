@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default  # Argo CD project name
   source:
-    repoURL: 'https://github.com/TheAbdullahChaudhary/gitops_argoCD_heml'  # URL of your Git repository
+    repoURL: 'https://github.com/TheAbdullahChaudhary/gitops_argoCD_helm'  # URL of your Git repository
     path: helm-charts/my-helm-chart  # Path to the directory containing the Helm chart
     targetRevision: main  # Branch, tag, or commit SHA to sync from
     helm:
