@@ -14,7 +14,7 @@ spec:
         - values.yaml  # Specify the Helm values file if needed
   destination:
     server: 'https://kubernetes.default.svc'  # Kubernetes cluster API endpoint
-    namespace: default  # Namespace where the Helm chart will be deployed
+    namespace: argocd-helm  # Namespace where the Helm chart will be deployed
   syncPolicy:
     automated:
       prune: true  # Prune resources not specified in Helm charts
