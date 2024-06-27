@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: my-helm-app
-  namespace: argocd-helm  # Namespace where Argo CD is deployed
+  namespace: argocd  # Namespace where Argo CD is deployed
 spec:
   project: default  # Argo CD project name
   source:
@@ -14,7 +14,7 @@ spec:
         - values.yaml  # Specify the Helm values file if needed
   destination:
     server: 'https://kubernetes.default.svc'  # Kubernetes cluster API endpoint
-    namespace: argocd-helm  # Namespace where the Helm chart will be deployed
+    namespace: default  # Namespace where the Helm chart will be deployed
   syncPolicy:
     automated:
       prune: true  # Prune resources not specified in Helm charts
