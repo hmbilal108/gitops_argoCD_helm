@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-helm-app
+  namespace: argocd  # Namespace where Argo CD is deployed
+spec:
+  project: default  # Argo CD project name
+  source:
+    repoURL: 'https://github.com/TheAbdullahChaudhary/gitops_argoCD_heml'  # URL of your Git repository
+    path: helm-charts/my-helm-chart  # Path to the directory containing the Helm chart
+    targetRevision: main  # Branch, tag, or commit SHA to sync from
+    helm:
+      valueFiles:
+        - values.yaml  # Specify the Helm values file if needed
+  destination:
+    server: 'https://kubernetes.default.svc'  # Kubernetes cluster API endpoint
+    namespace: default  # Namespace where the Helm chart will be deployed
+  syncPolicy:
+    automated:
+      prune: true  # Prune resources not specified in Helm charts
+      selfHeal: true  # Attempt to recover from failure automatically
