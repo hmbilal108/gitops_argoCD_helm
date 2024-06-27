@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: my-helm-app
-  namespace: argocd_heml  # Namespace where Argo CD is deployed
+  namespace: argocd-heml  # Namespace where Argo CD is deployed
 spec:
   project: default  # Argo CD project name
   source:
