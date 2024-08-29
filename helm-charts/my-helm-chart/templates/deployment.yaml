@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: theabdullahchaudhary/my-apache-server-with-love-message:latest
+        image: nginx:1.14.2
         ports:
         - containerPort: 80
